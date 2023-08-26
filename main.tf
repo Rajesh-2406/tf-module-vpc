@@ -9,8 +9,8 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "main" {
   count = length(var.web_subnet_cidr_block)
-  vapc_id = aws_vpc.main.id
-  cide_block = element(var.web_subnet_cidr_block, count.index)
+  vpc_id = aws_vpc.main.id
+  cidr_block = element(var.web_subnet_cidr_block, count.index)
 
   tags = merge({
     Name = "${var.env}-web-subnet"
