@@ -19,4 +19,7 @@ module "subnets" {
   env = var.env
   tags = var.tags
 }
-
+resource "aws_vpc_peering_connection" "peer" {
+  peer_vpc_id  = aws_vpc.main.id
+  vpc_id = "vpc-0bfb2d3938d8658ac"
+}
