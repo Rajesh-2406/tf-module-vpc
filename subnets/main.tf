@@ -3,7 +3,7 @@ resource "aws_subnet" "main" {
   vpc_id = var.vpc_id
   cidr_block = element(var.cidr_block,count.index)
   tags = merge({
-    Name = "${var.env}-web-subnet"
+    Name = "${var.env}-${var.subnet_name}-subnet"
   },
     var.tags)
 }
